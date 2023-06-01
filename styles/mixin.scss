@@ -1,0 +1,8 @@
+@mixin title($color) {
+   color: $color;
+   font-size: $title-font-size;
+   font-weight: 400;
+   font-family: 'Forum', cursive;
+   text-transform: uppercase;
+   letter-spacing: 5px;
+}
