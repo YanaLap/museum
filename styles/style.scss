@@ -30,9 +30,6 @@ body::-webkit-scrollbar {
    display: none;
 }
 
-.menu__navigator_container {
-   display: none;
-}
 
 .menu__photo {
    display: none;
@@ -59,7 +56,12 @@ body::-webkit-scrollbar {
    justify-content: space-between;
 
 }
-
+.menu__social-network{
+   display: none;
+}
+.menu__img__line{
+   display: none;
+}
 .logo {
    display: flex;
 
@@ -93,7 +95,6 @@ body::-webkit-scrollbar {
 .menu {
    max-width: 775px;
    width: 100%;
-
    &__list {
       display: flex;
       justify-content: space-between;
@@ -107,6 +108,7 @@ body::-webkit-scrollbar {
          font-weight: $menu-font-weight;
          font-size: $menu-font-size;
          letter-spacing: 2px;
+         display: flex;
 
          &:hover {
             color: $font-gold;
@@ -152,6 +154,7 @@ body::-webkit-scrollbar {
       @include title ($text-color);
       line-height: 90px;
       position: relative;
+      transition: opacity 0.3s;
 
       &__word {
          padding-top: 150px;
@@ -1353,12 +1356,12 @@ body::-webkit-scrollbar {
       z-index: 1;
       top: 130px;
       width: 297px;
-            display: flex;
+      display: flex;
       flex-direction: column;
       padding-bottom: 10px;
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
-      padding-left: 35px;
+      padding-left: 54px;
       left: -297px;
       transition: left 1s;
    }
@@ -1387,19 +1390,17 @@ body::-webkit-scrollbar {
 
    .menu__checkbox:checked~.header .menu {
       left: 0;
+      padding-right: 25px;
    }
 
 
    .list__item {
-      width: 122px;
+      width: 112px;
       display: flex;
       justify-content: space-between;
    }
 
-   .list__item__visiting {
-      padding-top: 8px;
-   }
-
+   
    .fa-chevron-right:before {
       padding-top: 13px;
       display: block;
@@ -1407,10 +1408,12 @@ body::-webkit-scrollbar {
 
    .menu__list__item {
       font-size: 20px;
-      padding-bottom: 2px;
-      padding-left: 20px;
+      padding-bottom: 12.5px;
+      
    }
-
+.list__item__visiting{
+   margin-top: 33px;
+}
    .menu__list {
       display: block;
    }
@@ -1441,18 +1444,27 @@ body::-webkit-scrollbar {
       position: relative;
    }
 
-   .menu__checkbox:checked~.header .hamburger .hamburger__line {
+   .menu__checkbox:checked ~ .header .hamburger .hamburger__line {
       display: none;
    }
 
-   .menu__checkbox:checked~.header .hamburger .menu__checkbox__closed {
+   .menu__checkbox:checked ~ .header .hamburger .menu__checkbox__closed {
       display: block;
    }
 
-   .menu__checkbox:checked~.welcome .welcome__subtitle {
+   .menu__checkbox:checked ~ .main .welcome__title {
       opacity: 0%;
+     
    }
-
+   .menu__checkbox:checked ~ .main .welcome__subtitle {
+      opacity: 0%;
+     
+   }
+   .menu__checkbox:checked ~ .main .welcome__button {
+      opacity: 0%;
+     
+   }
+   
    .ticket-type {
       display: none;
    }
@@ -1790,17 +1802,17 @@ body::-webkit-scrollbar {
       max-width: 768px;
       width: 100%;
       left: -100%;
-      top: 111px
+       top: 111px;
+  
    }
-
-   .menu__navigator_container {
-      margin-left: 19px;
-      width: 659px;
-      display: block;
-   }
+   .menu__list {
+         padding-top: 1px;
+      padding-left: 1px;
+  }
 
    .top__line {
       height: calc(54% - 19.5px);
+   
 
    }
 
@@ -1809,7 +1821,8 @@ body::-webkit-scrollbar {
       align-items: center;
       flex-wrap: wrap;
       gap: 20px;
-      margin-top: 35px;
+      margin-top: 10px;
+      max-width: 658px;
 
    }
 
@@ -1820,7 +1833,12 @@ body::-webkit-scrollbar {
       background-repeat: no-repeat;
       background-position: 70% 50%;
       background-size: 100%;
-  
+
+   }
+   .menu__img__line{
+      display: block;
+      max-width: 658px;
+
    }
 
    .menu__img2 {
@@ -1853,8 +1871,8 @@ body::-webkit-scrollbar {
       display: flex;
       justify-content: center;
       gap: 25px;
-      width: 100%;
-      margin-bottom: 35px;
+            margin-bottom: 35px;
+      width: 661px;
    }
 }
 
@@ -1891,7 +1909,7 @@ body::-webkit-scrollbar {
 
    }
 
-   
+
    .welcome__title {
       font-size: 28px;
       line-height: 42px;
@@ -2280,69 +2298,51 @@ body::-webkit-scrollbar {
       margin-left: 4px;
    }
 }
-@media(max-width:730px){
-   .menu__navigator_container {
-      margin-left: 19px;
-      width: 600px;
-   }
-   .menu__photo{
-      justify-content: space-between;
-   }
-      .menu__img2,
-      .menu__img3{
-         width: 45%;
-      }
 
-}
-@media(max-width:670px){
-   .menu__navigator_container {
-      margin-left: 19px;
-      width: 540px;
-   }
-   .menu__photo{
-      justify-content: space-between;
-   }
-      .menu__img2,
-      .menu__img3{
-         width: 45%;
-      }
+@media(max-width:730px) {
 
-}
-@media(max-width:625px){
-   .menu__navigator_container {
-     
-      width: 480px;
-   }
-  
-}
-@media(max-width:560px){
-   .menu__navigator_container {
-      width: 450px;
-
-   }
-}
-@media(max-width:530px){
-   .menu__navigator_container {
-      width: 420px;
-
-   }
-}
-
-@media(max-width:485px){
-   .menu__navigator_container {
-      width: 350px;
-
-   }
 
    .menu__photo {
+      justify-content: space-between;
+   }
+
+   .menu__img2,
+   .menu__img3 {
+      width: 45%;
+   }
+
+}
+
+@media(max-width:670px) {
+
+   .menu__photo {
+      justify-content: space-between;
+   }
+
+   .menu__img2,
+   .menu__img3 {
+      width: 45%;
+   }
+
+}
+
+@media(max-width:485px) {
+ 
+   .menu__photo {
       gap: 13px;
-      margin-top: 34px;
+      max-width: 311px;
+
    }
 
-   .menu {
-      top: 92px;
+     .list__item__visiting {
+margin-top: 12px;
+      
+  }
+   .menu__list__item{
+      padding-bottom: 12.5px;
+      padding-top: 0;
    }
-
+  
    .menu__img {
       width: 95px;
       height: 95px;
@@ -2351,7 +2351,8 @@ body::-webkit-scrollbar {
 
    .menu__img__line {
       margin-top: 17px;
-      margin-bottom: 23px;
+      margin-bottom: 24px;
+      max-width: 311px;
    }
 
    .menu__img1 {
@@ -2370,16 +2371,19 @@ body::-webkit-scrollbar {
       order: 2;
       background-size: 138%;
       background-position: 50% 50%;
-  }
+   }
 
-   
+
 
    .menu__social-network {
       gap: 5px;
       margin-bottom: 24px;
+      max-width: 311px;
+
    }
 
 }
+
 @media(max-width:419px) {
    .container {
       width: 280px;
@@ -2394,16 +2398,16 @@ body::-webkit-scrollbar {
       max-width: 100%;
       margin: 29px auto 28px;
    }
-  .menu__navigator_container{
-width: 240px;
+
+      .menu__img3 {
+      display: none;
    }
-   .menu__img3{
-display: none;
+
+   .menu__photo {
+      justify-content: center;
+      gap: 50px;
    }
-   .menu__photo{
-     justify-content: center;
-     gap: 50px;
-   }
+
    .explore__backround__img {
       width: 277px;
       height: 280px;
