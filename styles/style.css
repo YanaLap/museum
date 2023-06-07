@@ -1853,6 +1853,9 @@ body::-webkit-scrollbar {
   .container {
     max-width: 850px;
   }
+  .gallery__photo__container_768 {
+    justify-content: space-between;
+  }
 }
 @media (max-width: 870px) {
   .container {
